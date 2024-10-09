@@ -1,0 +1,32 @@
+id,entity,category,rank
+1,Banana bread,food,23
+2,Black coffee,food,7
+3,Brocoli,food,24
+4,Soup,food,34
+5,Pizza,food,190
+6,Sushi,food,11
+7,Burger,food,91
+8,Pasta,food,42
+9,Tacos,food,51
+10,Ceaser salad,food,7
+11,Ice cream,food,81
+12,Steak,food,92
+13,Fried chicken,food,111
+14,Mushrooms,food,23
+15,Vasline,beauty,2
+16,Lip gloss,beauty,18
+17,Oak tree,plants,9
+18,Magpie,animal,1
+19,Corgi,animal,190
+20,Koala,animal,74
+21,Penguin,animal,55
+22,Panda,animal,88
+23,T-rex,animal,61
+24,Batman,fictional character,46
+25,garfield,fictional character,12
+26,Harry Potter,fictional character,2
+27,Chewbacca,fictional character,34
+28,Taylor Swift,celebrity,34
+29,Sabrina Carpenter,celebrity,91
+30,Donald Trump,celebrity,3
+31,Honda Civic,technology,19
