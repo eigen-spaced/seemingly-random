@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <nav>
-      <section class="nav-left">
-        <div>SEEMINGLY RANDOM</div>
-      </section>
-      <section class="nav-right">
-        <NuxtLink to="#">Rankings</NuxtLink>
-        <NuxtLink to="/start-ranking">Start Ranking</NuxtLink>
-        <NuxtLink to="#">Stats</NuxtLink>
-      </section>
-    </nav>
-    <div class="main">
-      <slot />
-    </div>
+  <nav>
+    <section class="nav-left">
+      <div>SEEMINGLY RANDOM</div>
+    </section>
+    <section class="nav-right">
+      <NuxtLink to="#">Rankings</NuxtLink>
+      <NuxtLink to="/start-ranking">Start Ranking</NuxtLink>
+      <NuxtLink to="#">Stats</NuxtLink>
+    </section>
+  </nav>
+  <div class="main">
+    <slot />
   </div>
 </template>
 

@@ -5,7 +5,7 @@ export default defineEventHandler(async (_) => {
     const result = await database.query(
       "SELECT * FROM entities ORDER BY RANDOM() LIMIT 2"
     )
-    return result.rows[0] // Return the random user
+    return result.rows
   } catch (err) {
     console.error("Error fetching random entities:", err)
     return { error: "Failed to fetch random entities" }
