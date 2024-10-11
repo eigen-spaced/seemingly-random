@@ -7,7 +7,7 @@ export default defineEventHandler(async (_) => {
     )
     return result.rows // Send back the rows to the client
   } catch (err) {
-    console.error("Error fetching users:", err)
+    console.error("Error fetching entities:", err)
     return { error: "Failed to fetch entities" }
   }
 })
