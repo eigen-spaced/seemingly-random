@@ -13,9 +13,9 @@ id,entity,category,rank
 12,Steak,food,92
 13,Fried chicken,food,111
 14,Mushrooms,food,23
-15,Vasline,beauty,2
+15,Vasaline,beauty,2
 16,Lip gloss,beauty,18
-17,Oak tree,plants,9
+17,Sunflower,plants,9
 18,Magpie,animal,1
 19,Corgi,animal,190
 20,Koala,animal,74
@@ -30,3 +30,11 @@ id,entity,category,rank
 29,Sabrina Carpenter,celebrity,91
 30,Donald Trump,celebrity,3
 31,Honda Civic,technology,19
+32,Mickey Mouse,fictional character,31
+33,Donald Duck,fictional character,21
+34,Grasshopper,animal,9
+35,Redback spider,animal,2
+36,Jellyfish,animal,17
+37,Particle accelerator,abstract,61
+38,Gandalf,fictional character,34
+39,Butter Chicken,food,94
