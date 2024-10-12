@@ -2,7 +2,7 @@
 const { data: entities, refresh } = await useFetch("/api/entities/random-2")
 
 const handleEntityClicked = async (winnerEntity, loserEntity) => {
-  await $fetch("/api/comparison", {
+  await $fetch("/api/comparisons", {
     method: "POST",
     body: {
       winnerId: winnerEntity.id,
