@@ -4,9 +4,9 @@
       <div>SEEMINGLY RANDOM</div>
     </section>
     <section class="nav-right">
-      <NuxtLink to="#">Rankings</NuxtLink>
+      <NuxtLink to="/">Rankings</NuxtLink>
       <NuxtLink to="/start-ranking">Start Ranking</NuxtLink>
-      <NuxtLink to="#">Stats</NuxtLink>
+      <NuxtLink to="/stats">Stats</NuxtLink>
     </section>
   </nav>
   <div class="main">
