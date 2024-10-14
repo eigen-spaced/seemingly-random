@@ -1,40 +1,92 @@
-id,entity,category,rank
-1,Banana bread,food,23
-2,Black coffee,food,7
-3,Brocoli,food,24
-4,Soup,food,34
-5,Pizza,food,190
-6,Sushi,food,11
-7,Burger,food,91
-8,Pasta,food,42
-9,Tacos,food,51
-10,Ceaser salad,food,7
-11,Ice cream,food,81
-12,Steak,food,92
-13,Fried chicken,food,111
-14,Mushrooms,food,23
-15,Vasaline,beauty,2
-16,Lip gloss,beauty,18
-17,Sunflower,plants,9
-18,Magpie,animal,1
-19,Corgi,animal,190
-20,Koala,animal,74
-21,Penguin,animal,55
-22,Panda,animal,88
-23,T-rex,animal,61
-24,Batman,fictional character,46
-25,garfield,fictional character,12
-26,Harry Potter,fictional character,2
-27,Chewbacca,fictional character,34
-28,Taylor Swift,celebrity,34
-29,Sabrina Carpenter,celebrity,91
-30,Donald Trump,celebrity,3
-31,Honda Civic,technology,19
-32,Mickey Mouse,fictional character,31
-33,Donald Duck,fictional character,21
-34,Grasshopper,animal,9
-35,Redback spider,animal,2
-36,Jellyfish,animal,17
-37,Particle accelerator,abstract,61
-38,Gandalf,fictional character,34
-39,Butter Chicken,food,94
+entity,category,rank
+Soup,Food & Beverages,1.0
+Sushi,Food & Beverages,1.0
+Steak,Food & Beverages,1.0
+Pasta,Food & Beverages,1.0
+Tacos,Food & Beverages,1.0
+Pizza,Food & Beverages,1.0
+Burger,Food & Beverages,1.0
+Brocoli,Food & Beverages,1.0
+Ice cream,Food & Beverages,1.0
+Mushrooms,Food & Beverages,1.0
+Ceaser salad,Food & Beverages,1.0
+Banana bread,Food & Beverages,1.0
+Black coffee,Food & Beverages,1.0
+Fried chicken,Food & Beverages,1.0
+Butter Chicken,Food & Beverages,1.0
+Pen,Everyday Essentials,1.0
+Vasaline,Everyday Essentials,1.0
+Lip gloss,Everyday Essentials,1.0
+Toothpaste,Everyday Essentials,1.0
+Alarm clock,Everyday Essentials,1.0
+Moisturiser,Everyday Essentials,1.0
+Hand sanitizer,Everyday Essentials,1.0
+Q-tip (Cotton buds),Everyday Essentials,1.0
+Magpie,Animals & Plants,1.0
+Corgi,Animals & Plants,1.0
+Koala,Animals & Plants,1.0
+Panda,Animals & Plants,1.0
+T-rex,Animals & Plants,1.0
+Turtle,Animals & Plants,1.0
+Penguin,Animals & Plants,1.0
+Sunflower,Animals & Plants,1.0
+Jellyfish,Animals & Plants,1.0
+Honey Bee,Animals & Plants,1.0
+Grasshopper,Animals & Plants,1.0
+Redback spider,Animals & Plants,1.0
+Batman,fictional characters,1.0
+Gandalf,Fictional Characters,1.0
+Garfield,fictional characters,1.0
+Chewbacca,Fictional characters,1.0
+Donald Duck,Fictional characters,1.0
+Harry Potter,fictional characters,1.0
+Mickey Mouse,Fictional characters,1.0
+Elon Musk,Celebrities & Public Figures,1.0
+Kanye West,Celebrities & Public Figures,1.0
+Mike Tyson,Celebrities & Public Figures,1.0
+Taylor Swift,Celebrities & Public Figures,1.0
+Donald Trump,Celebrities & Public Figures,1.0
+Keanu Reeves,Celebrities & Public Figures,1.0
+Genghis Khan,Celebrities & Public Figures,1.0
+Conor McGregor,Celebrities & Public Figures,1.0
+Sabrina Carpenter,Celebrities & Public Figures,1.0
+Titanic,Entertainment & Media,1.0
+Ghostbusters,Entertainment & Media,1.0
+The Godfather,Entertainment & Media,1.0
+The Terminator,Entertainment & Media,1.0
+The Twilight Series,Entertainment & Media,1.0
+The Lord of The Rings,Entertainment & Media,1.0
+Honda Civic,Machines & Tools,1.0
+Blender,Machines & Tools,1.0
+Forklift,Machines & Tools,1.0
+Lawn Mower,Machines & Tools,1.0
+Skateboard,Machines & Tools,1.0
+Masking tape,Machines & Tools,1.0
+Space Shuttle,Machines & Tools,1.0
+Electric Drill,Machines & Tools,1.0
+Construction Crane,Machines & Tools,1.0
+Noise Cancelling headphones,Machines & Tools,1.0
+A brick,Absurd,1.0
+Wet socks,Absurd,1.0
+Stealth Bomber,Absurd,1.0
+Anabolic steroids,Absurd,1.0
+Leftover spaghetti,Absurd,1.0
+Particle accelerator,Absurd,1.0
+Vintage cheese perfume,Absurd,1.0
+Industrial cement mixer,Absurd,1.0
+3 AM existential crisis,Absurd,1.0
+Life-sized cardboard cutout of Nicolas Cage,Absurd,1.0
+Ocean,Environment & Nature,1.0
+Caves,Environment & Nature,1.0
+Lakes,Environment & Nature,1.0
+Ponds,Environment & Nature,1.0
+Forests,Environment & Nature,1.0
+Deserts,Environment & Nature,1.0
+Beaches,Environment & Nature,1.0
+Volcano,Environment & Nature,1.0
+Sunsets,Environment & Nature,1.0
+Mountains,Environment & Nature,1.0
+Waterfalls,Environment & Nature,1.0
+Coral reefs,Environment & Nature,1.0
+Thunderstorm,Environment & Nature,1.0
+Northern lights,Environment & Nature,1.0
