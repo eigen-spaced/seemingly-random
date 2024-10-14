@@ -17,7 +17,7 @@ rankColors.value = chroma
 <template>
   <NuxtLayout>
     <div class="rankings">
-      <ClientOnly fallback="Loading comments...">
+      <ClientOnly fallback="Loading List...">
         <div
           :style="{ background: rankColors(index) }"
           class="ranked-item"
