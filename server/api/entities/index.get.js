@@ -1,4 +1,4 @@
-import database from "~/server/api/utils/database"
+import database from "../utils/database"
 
 export default defineEventHandler(async (_) => {
   try {
