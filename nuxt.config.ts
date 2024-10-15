@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     pgDatabase: "",
   },
   modules: ["@nuxtjs/google-fonts"],
+  css: ["katex/dist/katex.min.css"],
   googleFonts: {
     families: {
       "Ubuntu Mono": true,
