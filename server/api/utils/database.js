@@ -1,11 +1,13 @@
 import pg from "pg"
 
+const config = useRuntimeConfig()
+
 const pool = new pg.Pool({
-  host: process.env.PG_HOST,
-  port: process.env.PG_PORT,
-  user: process.env.PG_USER,
-  password: process.env.PG_PASSWORD,
-  database: process.env.PG_DATABASE,
+  host: config.pgHost,
+  port: config.pgPort,
+  user: config.pgUser,
+  password: config.pgPassword,
+  database: config.pgDatabase,
   max: 10,
 })
 
