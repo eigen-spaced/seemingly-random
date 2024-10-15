@@ -1,6 +1,9 @@
 <script setup>
 const { data: entities, refresh } = await useFetch("/api/entities/random-2")
 
+let initialComparison = ref(true) // Track if it's the first load
+const currentPrediction = reactive({ predictedWinner: "", probability: 0.0 })
+
 const handleEntityClicked = async (winnerEntity, loserEntity) => {
   await $fetch("/api/comparisons", {
     method: "POST",
@@ -30,8 +33,21 @@ const handleEntityClicked = async (winnerEntity, loserEntity) => {
       })
     )
   )
+
+  initialComparison.value = false
+  const prediction = predictWinner(winnerEntity, loserEntity)
+  Object.assign(currentPrediction, prediction)
+
   refresh()
 }
+
+const predictionText = computed(() => {
+  return initialComparison.value
+    ? ""
+    : parseFloat(currentPrediction.probability) === 50
+      ? "Both had an equal chance of getting picked"
+      : `${currentPrediction.predictedWinner} had a ${currentPrediction.probability} of getting picked`
+})
 </script>
 
 <template>
@@ -39,12 +55,21 @@ const handleEntityClicked = async (winnerEntity, loserEntity) => {
     <div class="wrapper">
       <div>Choose one you prefer over the other</div>
       <div class="selection-container">
-        <div class="entity-item entity-item__a" @click="handleEntityClicked(entities[0], entities[1])">
+        <div
+          class="entity-item entity-item__a"
+          @click="handleEntityClicked(entities[0], entities[1])"
+        >
           {{ entities[0].entity }}
         </div>
-        <div class="entity-item entity-item__b" @click="handleEntityClicked(entities[1], entities[0])">
+        <div
+          class="entity-item entity-item__b"
+          @click="handleEntityClicked(entities[1], entities[0])"
+        >
           {{ entities[1].entity }}
         </div>
+      </div>
+      <div>
+        {{ predictionText }}
       </div>
     </div>
   </NuxtLayout>
