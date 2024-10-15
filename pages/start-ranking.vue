@@ -93,6 +93,7 @@ const predictionText = computed(() => {
   background: #aeaac4;
   width: 8rem;
   padding: 1.7em 3rem;
+  font-size: 17px;
   text-align: center;
   border-radius: 9px;
   cursor: pointer;

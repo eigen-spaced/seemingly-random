@@ -1,7 +1,7 @@
 <script setup>
 import chroma from "chroma-js"
 
-const rankColors = ref(() => {})
+const rankColors = ref(() => { })
 
 const {
   data: entities,
@@ -35,13 +35,8 @@ rankColors.value = chroma
           <div v-if="status === 'error'">
             {{ error }}
           </div>
-          <div
-            v-else
-            :style="{ background: rankColors(index) }"
-            class="ranked-item"
-            v-for="(item, index) in entities"
-            :key="index"
-          >
+          <div v-else :style="{ background: rankColors(index) }" class="ranked-item" v-for="(item, index) in entities"
+            :key="index">
             {{ item.entity }}
           </div>
         </ClientOnly>
@@ -51,10 +46,6 @@ rankColors.value = chroma
 </template>
 
 <style scoped>
-.description {
-  font-size: 19px;
-}
-
 .rankings {
   padding: 0 1rem;
 }
