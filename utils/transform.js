@@ -26,15 +26,14 @@ const categoryColors = {
 }
 
 export const transformEntitiesToNodes = (entitiesArr, ranksArr) => {
-  console.log(categoryColors[entitiesArr[0].entities.entity_category])
   const transformedNodes = entitiesArr.map((item, index) => ({
-    key: item.entities.id,
+    key: item.id,
     attributes: {
       size: ranksArr[index],
       x: Number((Math.random() * 600 - 300).toFixed(5)),
       y: Number((Math.random() * 600 - 300).toFixed(5)),
-      label: item.entities.entity_name,
-      color: categoryColors[item.entities.entity_category],
+      label: item.entity,
+      color: categoryColors[item.category],
     },
   }))
 

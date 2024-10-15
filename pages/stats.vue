@@ -4,7 +4,7 @@ import forceAtlas2 from "graphology-layout-forceatlas2"
 import FA2Layout from "graphology-layout-forceatlas2/worker"
 
 const [entities, entitiesRanks, comparisonsAgg] = await Promise.all([
-  useFetch("/api/entities/as-json").then((res) => res.data),
+  useFetch("/api/entities/for-nodes").then((res) => res.data),
   useFetch("/api/entities/ranks").then((res) => res.data),
   useFetch("/api/comparisons/agg_count").then((res) => res.data),
 ])
