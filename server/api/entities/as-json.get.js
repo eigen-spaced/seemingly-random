@@ -7,7 +7,8 @@ export default defineEventHandler(async (_) => {
         SELECT
           json_build_object(
               'id', entities.id,
-              'entity_name', entities.entity
+              'entity_name', entities.entity,
+              'entity_category', entities.category
           ) AS entities
         FROM entities
       `
