@@ -125,6 +125,18 @@ onUnmounted(() => renderer.value.kill())
 
 <template>
   <NuxtLayout>
-    <div ref="graphEl" :style="graphElStyles"></div>
+    <template #twocolumn>
+      <div>
+        <h3>Network Graph Overview</h3>
+        This graph visualizes relationships between items based on user
+        preferences. Each node represents an item, and the connecting edges show
+        the outcome of comparisons. Thicker edges indicate more frequent wins by
+        one item over another, helping you quickly spot strong or popular
+        preferences. Use the graph to explore how items are connected and
+        identify patterns in their rankings!
+      </div>
+
+      <div ref="graphEl" :style="graphElStyles"></div>
+    </template>
   </NuxtLayout>
 </template>

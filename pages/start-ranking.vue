@@ -43,7 +43,7 @@ const handleEntityClicked = async (winnerEntity, loserEntity) => {
 
 const predictionText = computed(() => {
   return initialComparison.value
-    ? ""
+    ? "Prediction will show here after you make a selection"
     : parseFloat(currentPrediction.probability) === 50
       ? "Both had an equal chance of getting picked"
       : `${currentPrediction.predictedWinner} had a ${currentPrediction.probability} of getting picked`
@@ -75,7 +75,7 @@ const predictionText = computed(() => {
   </NuxtLayout>
 </template>
 
-<style>
+<style scoped>
 .wrapper {
   padding: 6rem;
   margin: auto 0;
@@ -96,5 +96,16 @@ const predictionText = computed(() => {
   text-align: center;
   border-radius: 9px;
   cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.entity-item__a {
+  background: #c8b6ff;
+}
+
+.entity-item__b {
+  background: #b8c0ff;
 }
 </style>
