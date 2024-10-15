@@ -11,7 +11,7 @@ const [entities, entitiesRanks, comparisonsAgg] = await Promise.all([
 
 const nodes = transformEntitiesToNodes(
   entities.value,
-  normaliseRanks(entitiesRanks.value[0].ranks)
+  normaliseRanks(entitiesRanks.value.ranks)
 )
 
 const edges = transformComparisonsToEdges(comparisonsAgg.value)

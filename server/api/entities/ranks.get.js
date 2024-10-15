@@ -7,7 +7,7 @@ export default defineEventHandler(async (_) => {
         SELECT array_agg(rank::float) AS ranks FROM entities
       `
     )
-    return result.rows
+    return result.rows[0]
   } catch (err) {
     console.error("Error fetching entities as JSON:", err)
     return { error: "Failed to fetch entities as JSON" }
