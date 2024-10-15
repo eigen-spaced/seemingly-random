@@ -3,15 +3,15 @@ import Graph from "graphology"
 import forceAtlas2 from "graphology-layout-forceatlas2"
 import FA2Layout from "graphology-layout-forceatlas2/worker"
 
-const [entities, entitiesRanks, comparisonsAgg] = await Promise.all([
-  useFetch("/api/entities/for-nodes").then((res) => res.data),
-  useFetch("/api/entities/ranks").then((res) => res.data),
-  useFetch("/api/comparisons/agg_count").then((res) => res.data),
+const [entities, entitiesRanksMinMax, comparisonsAgg] = await Promise.all([
+  useFetch("/api/entities").then((res) => res.data),
+  useFetch("/api/entities/ranks/min-max").then((res) => res.data),
+  useFetch("/api/comparisons/agg-count").then((res) => res.data),
 ])
 
 const nodes = transformEntitiesToNodes(
   entities.value,
-  normaliseRanks(entitiesRanks.value.ranks)
+  entitiesRanksMinMax.value
 )
 
 const edges = transformComparisonsToEdges(comparisonsAgg.value)
