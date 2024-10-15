@@ -8,7 +8,7 @@ const pool = new pg.Pool({
   user: config.pgUser,
   password: config.pgPassword,
   database: config.pgDatabase,
-  max: 10,
+  max: 2,
 })
 
 export default {
