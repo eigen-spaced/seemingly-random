@@ -89,10 +89,7 @@ onMounted(async () => {
     setClickedNode(undefined)
   })
 
-  // Render nodes accordingly to the internal state:
-  // 1. If a node is selected, it is highlighted
-  // 2. If there is query, all non-matching nodes are greyed
-  // 3. If there is a hovered node, all non-neighbor nodes are greyed
+  // Render nodes accordingly to the internal state
   renderer.value.setSetting("nodeReducer", (node, data) => {
     const res = { ...data }
 
@@ -111,11 +108,7 @@ onMounted(async () => {
     return res
   })
 
-  // Render edges accordingly to the internal state:
-  // 1. If a node is hovered, the edge is hidden if it is not connected to the
-  //    node
-  // 2. If there is a query, the edge is only visible if it connects two
-  //    suggestions
+  // Render edges accordingly to the internal state
   renderer.value.setSetting("edgeReducer", (edge, data) => {
     const res = { ...data }
 
