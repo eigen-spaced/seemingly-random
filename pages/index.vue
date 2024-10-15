@@ -3,7 +3,11 @@ import chroma from "chroma-js"
 
 const rankColors = ref(() => {})
 
-const { data: entities } = await useFetch("/api/entities?order=desc")
+const {
+  data: entities,
+  status,
+  error,
+} = await useFetch("/api/entities?order=desc")
 // I don't want to go through all the parsing so I'll just use promise chaining to do the work here
 const entitiesCount = await useFetch("/api/entities/count").then((res) =>
   Number(res.data.value)
@@ -18,7 +22,11 @@ rankColors.value = chroma
   <NuxtLayout>
     <div class="rankings">
       <ClientOnly fallback="Loading List...">
+        <div v-if="status === 'error'">
+          {{ error }}
+        </div>
         <div
+          v-else
           :style="{ background: rankColors(index) }"
           class="ranked-item"
           v-for="(item, index) in entities"
