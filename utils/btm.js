@@ -1,3 +1,9 @@
+export const normalise = (rank, minRank, maxRank, minSize, maxSize) => {
+  return (
+    ((rank - minRank) / (maxRank - minRank)) * (maxSize - minSize) + minSize
+  )
+}
+
 const LEARNING_RATE = 0.05
 
 const p = (beta_a, beta_b) => {
