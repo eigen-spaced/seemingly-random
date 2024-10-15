@@ -23,6 +23,6 @@ export const predictWinner = (entityA, entityB) => {
 
   return {
     predictedWinner,
-    probability: `${(winningProbability * 100).toFixed(1)}%`, // Return as percentage
+    probability: (winningProbability * 100).toFixed(1), // Return as percentage
   }
 }
