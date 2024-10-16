@@ -44,10 +44,15 @@ const formulaDisplay = computed(() =>
       </button>
 
       <div :style="{ display: formulaDisplay }">
-        <MathRenderer formula=" The model assumes that for any two items $A$ and $B$, the probability
+        <MathRenderer
+          formula=" The model assumes that for any two items $A$ and $B$, the probability
         $(A \succ B)$ — that item $A$ is chosen over item $B$ is based on the ratio
-        of their abilities:" />
-        <MathRenderer formula="$$P(A \succ B) = \frac{e^{\beta_A}}{e^{\beta_A} + e^{\beta_B}}$$" :size="26" />
+        of their abilities:"
+        />
+        <MathRenderer
+          formula="$$P(A \succ B) = \frac{e^{\beta_A}}{e^{\beta_A} + e^{\beta_B}}$$"
+          :size="26"
+        />
 
         where:
         <ul>
@@ -68,10 +73,10 @@ const formulaDisplay = computed(() =>
         it should naturally have a higher score, right? While this approach
         works in simple comparisons, or comparing like items (a Honda Civic vs
         Toyota Yaris or a PC vs. Macbook), it fails to account for nuanced
-        factors, such as how challenging an item’s opponents are. Not all
-        victories carry the same weight: winning against a highly competitive
-        item (e.g., "sunsets") should matter more than winning against an
-        unpopular one (e.g., "wet socks").
+        factors, such as how challenging an item’s opponents are. Additionally,
+        Not all victories carry the same weight: winning against a highly
+        competitive item (e.g., "sunsets") should matter more than winning
+        against an unpopular one (e.g., "wet socks").
       </p>
       <p>
         This is where the Bradley-Terry model shines. Instead of just counting
