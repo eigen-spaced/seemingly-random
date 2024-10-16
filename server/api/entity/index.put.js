@@ -23,6 +23,7 @@ export default defineEventHandler(async (event) => {
     await client.query("COMMIT")
     client.release()
 
+    console.log("Success batch updating entities")
     return { success: true, message: "Batch update completed successfully" }
   } catch (err) {
     // Rollback transaction if anything goes wrong
