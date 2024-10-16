@@ -16,23 +16,21 @@ const handleEntityClicked = async (winnerEntity, loserEntity) => {
   let winnerCurRank = Number(winnerEntity.rank)
   let loserCurRank = Number(loserEntity.rank)
 
-  let updates = [
-    { id: winnerEntity.id, newRank: updateWinner(winnerCurRank, loserCurRank) },
-    { id: loserEntity.id, newRank: updateLoser(winnerCurRank, loserCurRank) },
-  ]
-
-  // Loop over the updates and apply them in parallel
-  await Promise.all(
-    updates.map(({ id, newRank }) =>
-      $fetch("/api/entity", {
-        method: "PUT",
-        body: {
-          entityId: id,
-          entityNewRank: newRank,
+  await $fetch("/api/entity", {
+    method: "PUT",
+    body: {
+      updates: [
+        {
+          id: winnerEntity.id,
+          newRank: updateWinner(winnerCurRank, loserCurRank),
         },
-      })
-    )
-  )
+        {
+          id: loserEntity.id,
+          newRank: updateLoser(winnerCurRank, loserCurRank),
+        },
+      ],
+    },
+  })
 
   initialComparison.value = false
   const prediction = predictWinner(winnerEntity, loserEntity)

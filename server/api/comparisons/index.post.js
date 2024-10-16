@@ -5,8 +5,8 @@ export default defineEventHandler(async (event) => {
     const { winnerId, loserId } = await readBody(event)
 
     await database.query(
-      `INSERT INTO comparisons (winner_id, loser_id)
-       VALUES (${winnerId}, ${loserId})`
+      "INSERT INTO comparisons (winner_id, loser_id) VALUES ($1, $2)",
+      [winnerId, loserId]
     )
 
     return {
