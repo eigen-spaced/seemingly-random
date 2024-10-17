@@ -46,7 +46,6 @@ const handleEntityClicked = async (winnerEntity, loserEntity) => {
   Object.assign(currentPrediction, prediction)
 
   refresh()
-  console.log(status)
 }
 
 const predictionText = computed(() => {
