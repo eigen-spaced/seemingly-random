@@ -9,43 +9,62 @@ let initialComparison = ref(true) // Track if it's the first load
 const currentPrediction = reactive({ predictedWinner: "", probability: 0.0 })
 
 const handleEntityClicked = async (winnerEntity, loserEntity) => {
-  await Promise.all([
-    $fetch("/api/comparisons", {
+  initialComparison.value = false
+
+  // fetch a new comparison set
+  refresh()
+
+  const prediction = predictWinner(winnerEntity, loserEntity)
+  Object.assign(currentPrediction, prediction)
+
+  const winnerCurRank = Number(winnerEntity.rank)
+  const loserCurRank = Number(loserEntity.rank)
+
+  try {
+    await $fetch("/api/update-comparisons-and-entities", {
       method: "POST",
       body: {
         winnerId: winnerEntity.id,
         loserId: loserEntity.id,
+        winnerNewRank: updateWinner(winnerCurRank, loserCurRank),
+        loserNewRank: updateLoser(winnerCurRank, loserCurRank),
       },
-    }),
-
-    $fetch("/api/entity", {
-      method: "PUT",
-      body: {
-        updates: [
-          {
-            id: winnerEntity.id,
-            newRank: updateWinner(
-              Number(winnerEntity.rank),
-              Number(loserEntity.rank)
-            ),
-          },
-          {
-            id: loserEntity.id,
-            newRank: updateLoser(
-              Number(winnerEntity.rank),
-              Number(loserEntity.rank)
-            ),
-          },
-        ],
-      },
-    }),
-  ])
-
-  initialComparison.value = false
-  const prediction = predictWinner(winnerEntity, loserEntity)
-  Object.assign(currentPrediction, prediction)
-
-  refresh()
+    })
+  } catch (error) {
+    console.error("Request failed most likely due to a server error: ", error)
+    // Optional: Handle failure (e.g., notify user or reload the previous state)
+  }
+  // await Promise.all([
+  //   $fetch("/api/comparisons", {
+  //     method: "POST",
+  //     body: {
+  //       winnerId: winnerEntity.id,
+  //       loserId: loserEntity.id,
+  //     },
+  //   }),
+  //
+  //   $fetch("/api/entity", {
+  //     method: "PUT",
+  //     body: {
+  //       updates: [
+  //         {
+  //           id: winnerEntity.id,
+  //           newRank: updateWinner(
+  //             Number(winnerEntity.rank),
+  //             Number(loserEntity.rank)
+  //           ),
+  //         },
+  //         {
+  //           id: loserEntity.id,
+  //           newRank: updateLoser(
+  //             Number(winnerEntity.rank),
+  //             Number(loserEntity.rank)
+  //           ),
+  //         },
+  //       ],
+  //     },
+  //   }),
+  // ])
 }
 
 const predictionText = computed(() => {
