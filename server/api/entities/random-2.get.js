@@ -1,7 +1,6 @@
 import database from "../utils/database"
 
 export default defineEventHandler(async (_) => {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
   try {
     const result = await database.query(
       "SELECT * FROM entities ORDER BY RANDOM() LIMIT 2"

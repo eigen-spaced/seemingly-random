@@ -1,42 +1,52 @@
 <script setup>
-const { data: entities, refresh } = await useFetch("/api/entities/random-2")
+const {
+  data: entities,
+  refresh,
+  status,
+} = await useFetch("/api/entities/random-2")
 
 let initialComparison = ref(true) // Track if it's the first load
 const currentPrediction = reactive({ predictedWinner: "", probability: 0.0 })
 
 const handleEntityClicked = async (winnerEntity, loserEntity) => {
-  await $fetch("/api/comparisons", {
-    method: "POST",
-    body: {
-      winnerId: winnerEntity.id,
-      loserId: loserEntity.id,
-    },
-  })
+  await Promise.all([
+    $fetch("/api/comparisons", {
+      method: "POST",
+      body: {
+        winnerId: winnerEntity.id,
+        loserId: loserEntity.id,
+      },
+    }),
 
-  let winnerCurRank = Number(winnerEntity.rank)
-  let loserCurRank = Number(loserEntity.rank)
-
-  await $fetch("/api/entity", {
-    method: "PUT",
-    body: {
-      updates: [
-        {
-          id: winnerEntity.id,
-          newRank: updateWinner(winnerCurRank, loserCurRank),
-        },
-        {
-          id: loserEntity.id,
-          newRank: updateLoser(winnerCurRank, loserCurRank),
-        },
-      ],
-    },
-  })
+    $fetch("/api/entity", {
+      method: "PUT",
+      body: {
+        updates: [
+          {
+            id: winnerEntity.id,
+            newRank: updateWinner(
+              Number(winnerEntity.rank),
+              Number(loserEntity.rank)
+            ),
+          },
+          {
+            id: loserEntity.id,
+            newRank: updateLoser(
+              Number(winnerEntity.rank),
+              Number(loserEntity.rank)
+            ),
+          },
+        ],
+      },
+    }),
+  ])
 
   initialComparison.value = false
   const prediction = predictWinner(winnerEntity, loserEntity)
   Object.assign(currentPrediction, prediction)
 
   refresh()
+  console.log(status)
 }
 
 const predictionText = computed(() => {
@@ -52,7 +62,8 @@ const predictionText = computed(() => {
   <NuxtLayout>
     <div class="wrapper">
       <div>Choose one you prefer over the other</div>
-      <div class="selection-container">
+      <div v-if="status === 'pending'">Fetching next comparison options</div>
+      <div v-else class="selection-container">
         <div
           class="entity-item entity-item__a"
           @click="handleEntityClicked(entities[0], entities[1])"
