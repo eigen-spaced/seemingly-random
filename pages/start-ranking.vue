@@ -104,11 +104,12 @@ const predictionText = computed(() => {
 
 <style scoped>
 .wrapper {
-  padding: 6rem;
-  margin: auto 0;
+  padding: 6rem 0;
+  margin: 0 auto;
   height: 20rem;
   display: grid;
   place-items: center;
+  text-align: center;
 }
 
 .selection-container {
@@ -135,5 +136,11 @@ const predictionText = computed(() => {
 
 .entity-item__b {
   background: #b8c0ff;
+}
+
+@media only screen and (max-width: 870px) {
+  .selection-container {
+    flex-direction: column;
+  }
 }
 </style>
