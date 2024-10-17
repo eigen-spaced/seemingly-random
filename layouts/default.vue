@@ -51,6 +51,8 @@ nav {
 
 .two-column {
   padding: 0 17rem;
+  padding-left: clamp(1rem, 5%, 4rem);
+  padding-right: clamp(1rem, 5%, 4rem);
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
