@@ -1,15 +1,3 @@
-const categoryColors = {
-  "Food & Beverages": "#f4d35e",
-  "Everyday Essentials": "#a1c181",
-  "Fictional Characters": "#0d3b66",
-  "Celebrities & Public Figures": "#be95c4",
-  "Entertainment & Media": "#faf0ca",
-  "Machines & Tools": "#eaac8b",
-  Absurd: "#f95738",
-  "Environment & Nature": "#84a59d",
-  "Concepts & Ideologies": "#ee964b",
-}
-
 /** Transform the JSON entities data returned from postgres to be used with Sigma to plot the nodes
  *  @param   {Array} entitesArr - Array of objects containing the entity name, id and category
  *  @param   {Array} ranksArr   - Array containing just the entity ranks

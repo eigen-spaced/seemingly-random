@@ -128,15 +128,41 @@ onUnmounted(() => renderer.value.kill())
     <template #twocolumn>
       <div class="description">
         <h3>Network Graph Overview</h3>
-        This graph visualizes relationships between items based on user
-        preferences. Each node represents an item, and the connecting edges show
-        the outcome of comparisons. Thicker edges indicate more frequent wins by
-        one item over another, while bigger node sizes indicate a higher rank,
-        helping you quickly spot strong or popular preferences. Use the graph to
-        explore how items are connected and identify patterns in their rankings!
+        <p>
+          This graph visualizes relationships between items based on user
+          preferences. Each node represents an item, and the connecting edges
+          show the outcome of comparisons. Thicker edges indicate more frequent
+          wins by one item over another, while bigger node sizes indicate a
+          higher rank, helping you quickly spot strong or popular preferences.
+          Use the graph to explore how items are connected and identify patterns
+          in their rankings!
+        </p>
+        <div>
+          <div
+            class="category-colors"
+            v-for="(color, category) in categoryColors"
+          >
+            <div class="color-box" :style="{ background: color }"></div>
+            <div>{{ category }}</div>
+          </div>
+        </div>
       </div>
 
       <div ref="graphEl" :style="graphElStyles"></div>
     </template>
   </NuxtLayout>
 </template>
+
+<style>
+.category-colors {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 3px;
+}
+
+.color-box {
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+}
+</style>
