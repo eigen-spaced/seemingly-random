@@ -9,6 +9,6 @@ export default defineEventHandler(async (_) => {
     return result.rows
   } catch (err) {
     console.error("Error fetching two random entities:", err)
-    return { error: "Failed to fetch random entities" }
+    return { status: 500, error: "Failed to fetch random entities" }
   }
 })

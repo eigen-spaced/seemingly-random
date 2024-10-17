@@ -16,6 +16,6 @@ export default defineEventHandler(async (event) => {
     }
   } catch (err) {
     console.error("Error inserting row into table comparison:", err)
-    return { error: "Failed to post entities" }
+    return { status: 500, error: "Failed to post entities" }
   }
 })
