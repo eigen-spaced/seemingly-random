@@ -32,7 +32,6 @@ const formulaDisplay = computed(() =>
       </p>
 
       <h2>The Model: Bradley-Terry Model</h2>
-
       <p>
         At the heart of the application lies the <b>Bradley-Terry model</b>.
         This model helps determine the probability of one item being preferred
@@ -71,7 +70,7 @@ const formulaDisplay = computed(() =>
         intuitive way to rank them—after all, that’s how we tend to compare
         things in everyday life. If one item wins more frequently than another,
         it should naturally have a higher score, right? While this approach
-        works in simple comparisons, or comparing like items (a Honda Civic vs
+        works for simple comparisons, or comparing like items (a Honda Civic vs
         Toyota Yaris or a PC vs. Macbook), it fails to account for nuanced
         factors, such as how challenging an item’s opponents are. Additionally,
         Not all victories carry the same weight: winning against a highly
@@ -108,7 +107,8 @@ const formulaDisplay = computed(() =>
         <li>
           <b>Probabilistic Nature:</b> It accounts for uncertainty and
           randomness in user decisions, which is essential given that not all
-          preferences are rational or consistent.
+          preferences are rational or consistent, especially with pairwise
+          comparison of unlike items.
         </li>
       </ul>
 
@@ -124,7 +124,6 @@ const formulaDisplay = computed(() =>
       </p>
 
       <h2>Visualization: Network Graph</h2>
-
       <p>
         The relationships between items are
         <NuxtLink to="/stats">visualized using a network graph.</NuxtLink>
